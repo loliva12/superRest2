@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "2ee4976c-5519-40c1-88ff-e2bb38d95ba6",
+		"name": "Rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38286558"
+	},
+	"item": [
+		{
+			"name": "Lista precios",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pwd_admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "usr_admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/v1/lista-precios/precios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"lista-precios",
+						"precios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "info sucursales",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8085/api/v1/informacion/sucursales",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"informacion",
+						"sucursales"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
