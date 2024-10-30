@@ -10,6 +10,8 @@ public class SucursalesRequest {
     private boolean habilitada;
     private String nomLocalidad;
     private String nomProvincia;
+    private String horarios;
+
 
     public int getNroSucursal() {
         return nroSucursal;
@@ -83,4 +85,11 @@ public class SucursalesRequest {
         this.nomProvincia = nomProvincia;
     }
 
+    public String getHorario() {
+        return horarios;
+    }
+
+    public void setHorario(String horarios) {
+        this.horarios = horarios;
+    }
 }
