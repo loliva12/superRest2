@@ -12,7 +12,7 @@ public class SucursalesRequest {
     private String nomProvincia;
     private String horarios;
     private String tipos_servicios;
-
+    private String productos;
 
     public int getNroSucursal() {
         return nroSucursal;
@@ -100,5 +100,13 @@ public class SucursalesRequest {
 
     public void settipos_servicios(String tipos_servicios) {
         this.tipos_servicios = tipos_servicios;
+    }
+
+    public String getProductos() {
+        return productos;
+    }
+
+    public void setProductos(String productos) {
+        this.productos = productos;
     }
 }
