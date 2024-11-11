@@ -23,6 +23,14 @@ public class SucursalesRequest {
         this.nroSucursal = nroSucursal;
     }
 
+    public String getNomSucursal() {
+        return nomSucursal;
+    }
+
+    public void setNomSucursal(String nomSucursal) {
+        this.nomSucursal = nomSucursal;
+    }
+
     public String getCalle() {
         return calle;
     }
@@ -111,11 +119,5 @@ public class SucursalesRequest {
         this.productos = productos;
     }
 
-    public String getNomSucursal() {
-        return nomSucursal;
-    }
 
-    public void setNomSucursal(String nomSucursal) {
-        this.nomSucursal = nomSucursal;
-    }
 }
