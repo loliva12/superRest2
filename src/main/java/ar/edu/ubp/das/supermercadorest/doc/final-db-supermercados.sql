@@ -113,6 +113,7 @@ INSERT INTO dbo.supermercado (razon_social, calle, nro_calle, telefonos) VALUES
 -- Crear tabla de sucursales
 CREATE TABLE dbo.sucursales (
     nro_sucursal INT PRIMARY KEY,
+	nom_sucursales VARCHAR(100) not null,
     calle VARCHAR(100) NOT NULL,
     nro_calle INT,
     telefonos VARCHAR(50),
@@ -122,11 +123,13 @@ CREATE TABLE dbo.sucursales (
     habilitada VARCHAR NOT NULL
 );
 -- Inser tabla de sucursales
-INSERT INTO dbo.sucursales (nro_sucursal, calle, nro_calle, telefonos, coord_latitud, coord_longitud, nro_localidad, habilitada) VALUES
-(1, 'Calle Principal', 123, '351-1234567', -31.4160, -64.1830, 1, 'S'),
-(2, 'Avenida Central', 456, '351-2345678', -31.3386, -64.3024, 2, 'S'),
-(3, 'Calle Comercio', 789, '351-3456789', -32.0667, -64.3000, 3, 'S'),
-(4, 'Boulevard Norte', 101, '351-4567890', -31.2946, -64.2777, 4, 'S');
+INSERT INTO dbo.sucursales (nro_sucursal,nom_sucursales, calle, nro_calle, telefonos, coord_latitud, coord_longitud, nro_localidad, habilitada) VALUES
+(1, 'Sucursal Centro', 'Calle Principal',123, '351-1234567', -31.4160, -64.1830, 1, 'S'),
+(2, 'Sucursal Norte', 'Avenida Central', 456, '351-2345678', -31.3386, -64.3024, 2, 'S'),
+(3,'Sucursal Sur', 'Calle Comercio', 789, '351-3456789', -32.0667, -64.3000, 3, 'S'),
+(4,'Sucursal Este' , 'Boulevard Norte',101, '351-4567890', -31.2946, -64.2777, 4, 'S');
+
+
 
 /* -------------------------------------
    TABLA HORARIO SUCURSALES
@@ -346,7 +349,57 @@ INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) 
 (1, '1234567890138', 1100.00, 'S'), -- Leche Descremada 1L Marca B
 (1, '1234567890139', 1300.00, 'S'), -- Yogur Sabor Durazno 1L
 (1, '1234567890140', 1000.00, 'S'); -- Jugo en Polvo Marca D
-
+--sucursale 2
+INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) VALUES
+(2, '1234567890126', 2500.00, 'S'), -- Detergente Líquido Marca C
+(2, '1234567890127', 1300.00, 'S'), -- Jabón de Manos Marca C
+(2, '1234567890128', 1110.00, 'S'), -- Jugo en Polvo Marca D
+(2, '1234567890129', 2300.00, 'S'), -- Jugo en Botella Marca E
+(2, '1234567890130', 1350.00, 'S'), -- Leche Descremada 1L
+(2, '1234567890131', 2100.00, 'S'), -- Detergente Líquido Marca B
+(2, '1234567890132', 1000.00, 'S'), -- Jabón de Manos Marca C'
+(2, '1234567890133', 3100.00, 'S'), -- Coca Cola Zero 2L
+(2, '1234567890134', 1900.00, 'S'), -- Jugo en Botella Marca E
+(2, '1234567890135', 1850.00, 'S'), -- Yogur Natural 1L
+(2, '1234567890136', 2900.00, 'S'), -- Gaseosa Fanta 2L
+(2, '1234567890137', 2300.00, 'S'), -- Detergente Líquido Marca C
+(2, '1234567890138', 1100.00, 'S'), -- Leche Descremada 1L Marca B
+(2, '1234567890139', 1300.00, 'S'), -- Yogur Sabor Durazno 1L
+(2, '1234567890140', 1000.00, 'S'); -- Jugo en Polvo Marca D
+--sucursal 3
+INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) VALUES
+(3, '1234567890126', 2500.00, 'S'), -- Detergente Líquido Marca C
+(3, '1234567890127', 1300.00, 'S'), -- Jabón de Manos Marca C
+(3, '1234567890128', 1110.00, 'S'), -- Jugo en Polvo Marca D
+(3, '1234567890129', 2300.00, 'S'), -- Jugo en Botella Marca E
+(3, '1234567890130', 1350.00, 'S'), -- Leche Descremada 1L
+(3, '1234567890131', 2100.00, 'S'), -- Detergente Líquido Marca B
+(3, '1234567890132', 1000.00, 'S'), -- Jabón de Manos Marca C'
+(3, '1234567890133', 3100.00, 'S'), -- Coca Cola Zero 2L
+(3, '1234567890134', 1900.00, 'S'), -- Jugo en Botella Marca E
+(3, '1234567890135', 1850.00, 'S'), -- Yogur Natural 1L
+(3, '1234567890136', 2900.00, 'S'), -- Gaseosa Fanta 2L
+(3, '1234567890137', 2300.00, 'S'), -- Detergente Líquido Marca C
+(3, '1234567890138', 1100.00, 'S'), -- Leche Descremada 1L Marca B
+(3, '1234567890139', 1300.00, 'S'), -- Yogur Sabor Durazno 1L
+(3, '1234567890140', 1000.00, 'S'); -- Jugo en Polvo Marca D
+--sucursal 4
+INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) VALUES
+(4, '1234567890126', 2500.00, 'S'), -- Detergente Líquido Marca C
+(4, '1234567890127', 1300.00, 'S'), -- Jabón de Manos Marca C
+(4, '1234567890128', 1110.00, 'S'), -- Jugo en Polvo Marca D
+(4, '1234567890129', 2300.00, 'S'), -- Jugo en Botella Marca E
+(4, '1234567890130', 1350.00, 'S'), -- Leche Descremada 1L
+(4, '1234567890131', 2100.00, 'S'), -- Detergente Líquido Marca B
+(4, '1234567890132', 1000.00, 'S'), -- Jabón de Manos Marca C'
+(4, '1234567890133', 3100.00, 'S'), -- Coca Cola Zero 2L
+(4, '1234567890134', 1900.00, 'S'), -- Jugo en Botella Marca E
+(4, '1234567890135', 1850.00, 'S'), -- Yogur Natural 1L
+(4, '1234567890136', 2900.00, 'S'), -- Gaseosa Fanta 2L
+(4, '1234567890137', 2300.00, 'S'), -- Detergente Líquido Marca C
+(4, '1234567890138', 1100.00, 'S'), -- Leche Descremada 1L Marca B
+(4, '1234567890139', 1300.00, 'S'), -- Yogur Sabor Durazno 1L
+(4, '1234567890140', 1000.00, 'S'); -- Jugo en Polvo Marca D
 
 -- Seleccionar todos los registros de la tabla paises
 SELECT * FROM dbo.paises;
@@ -413,54 +466,22 @@ WHERE s.habilitada = 'S' AND s.nro_localidad = nro_localidad;*/
 CREATE OR ALTER PROCEDURE dbo.get_lista_precios
 AS
 BEGIN
-    SELECT p.cod_barra, p.nom_producto, ps.precio
+    SELECT p.cod_barra, 
+           p.nom_producto, 
+           ps.precio, 
+           c.nom_categoria
     FROM dbo.productos_sucursales ps
     JOIN dbo.productos p ON ps.cod_barra = p.cod_barra
-    GROUP BY p.cod_barra, p.nom_producto, ps.precio;
+    JOIN dbo.categorias_productos c ON p.nro_categoria = c.nro_categoria
+    GROUP BY p.cod_barra, 
+             p.nom_producto, 
+             ps.precio, 
+             c.nom_categoria;
 END;
 
 
 --EXEC dbo.get_lista_precios;
 
-CREATE OR ALTER PROCEDURE dbo.get_info_sucursales
-AS
-BEGIN
-    SELECT 
-        s.nro_sucursal,
-        s.calle,
-        s.nro_calle,
-        s.telefonos,
-        s.coord_latitud,
-        s.coord_longitud,
-        s.habilitada,
-        l.nom_localidad,
-        p.nom_provincia
-
-    FROM 
-        sucursales s
-    INNER JOIN 
-        localidades l ON s.nro_localidad = l.nro_localidad
-    INNER JOIN 
-        provincias_localidades pl ON l.nro_localidad = pl.nro_localidad
-    INNER JOIN 
-        provincias p ON pl.cod_provincia = p.cod_provincia
-    LEFT JOIN 
-        horarios_sucursales h ON s.nro_sucursal = h.nro_sucursal
-    LEFT JOIN 
-        tipos_servicios_sucursales tss ON s.nro_sucursal = tss.nro_sucursal
-    LEFT JOIN 
-        tipos_servicios_supermercado ts ON tss.nro_tipo_servicio = ts.nro_tipo_servicio
-    GROUP BY 
-        s.nro_sucursal, 
-        s.calle, 
-        s.nro_calle, 
-        s.telefonos, 
-        s.coord_latitud, 
-        s.coord_longitud, 
-        s.habilitada, 
-        l.nom_localidad, 
-        p.nom_provincia;
-END;
 
 --EXEC dbo.get_info_sucursales;
 
@@ -469,6 +490,7 @@ AS
 BEGIN
     SELECT 
         s.nro_sucursal,
+		s.nom_sucursales,
         s.calle,
         s.nro_calle,
         s.telefonos,
@@ -503,7 +525,34 @@ BEGIN
             WHERE 
                 tss.nro_sucursal = s.nro_sucursal
             FOR JSON PATH
-        ) AS tipos_servicios
+        ) AS tipos_servicios,
+
+		 -- JSON para los productos de la sucursal
+        (
+            SELECT 
+                p.cod_barra,
+                p.nom_producto,
+                p.desc_producto,
+                p.imagen,
+                p.vigente,
+                c.nom_categoria AS categoria,
+                m.nom_marca AS marca,
+                t.nom_tipo_producto AS tipo_producto,
+                ps.precio
+            FROM 
+                productos_sucursales ps
+            INNER JOIN 
+                productos p ON ps.cod_barra = p.cod_barra
+            INNER JOIN 
+                categorias_productos c ON p.nro_categoria = c.nro_categoria
+            INNER JOIN 
+                marcas_productos m ON p.nro_marca = m.nro_marca
+            INNER JOIN 
+                tipos_productos t ON p.nro_tipo_producto = t.nro_tipo_producto
+            WHERE 
+                ps.nro_sucursal = s.nro_sucursal AND ps.vigente = 'S'
+            FOR JSON PATH
+        ) AS productos
 
     FROM 
         sucursales s
