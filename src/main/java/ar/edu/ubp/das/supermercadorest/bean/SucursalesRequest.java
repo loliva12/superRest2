@@ -2,6 +2,7 @@ package ar.edu.ubp.das.supermercadorest.bean;
 
 public class SucursalesRequest {
     private int nroSucursal;
+    private String nomSucursal;
     private String calle;
     private int nroCalle;
     private String telefonos;
@@ -108,5 +109,13 @@ public class SucursalesRequest {
 
     public void setProductos(String productos) {
         this.productos = productos;
+    }
+
+    public String getNomSucursal() {
+        return nomSucursal;
+    }
+
+    public void setNomSucursal(String nomSucursal) {
+        this.nomSucursal = nomSucursal;
     }
 }
