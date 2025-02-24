@@ -1,4 +1,4 @@
-use supermercados;
+use superRest2;
 
 -- Eliminar tablas intermedias y tablas con claves foráneas primero
 DROP TABLE IF EXISTS dbo.provincias_localidades;
@@ -105,7 +105,7 @@ CREATE TABLE dbo.supermercado (
 );
 -- Insert tabla de supermercado
 INSERT INTO dbo.supermercado (razon_social, calle, nro_calle, telefonos) VALUES
-('Supermercado CORDOBA', 'Calle 12', 345, '221-1234567');
+('Disco', 'Calle 12', 345, '221-1234567');
 
 /* -------------------------------------
    TABLA SUCURSALES
@@ -344,11 +344,8 @@ INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) 
 (1, '1234567890133', 3100.00, 'S'), -- Coca Cola Zero 2L
 (1, '1234567890134', 1900.00, 'S'), -- Jugo en Botella Marca E
 (1, '1234567890135', 1850.00, 'S'), -- Yogur Natural 1L
-(1, '1234567890136', 2900.00, 'S'), -- Gaseosa Fanta 2L
-(1, '1234567890137', 2300.00, 'S'), -- Detergente Líquido Marca C
-(1, '1234567890138', 1100.00, 'S'), -- Leche Descremada 1L Marca B
-(1, '1234567890139', 1300.00, 'S'), -- Yogur Sabor Durazno 1L
-(1, '1234567890140', 1000.00, 'S'); -- Jugo en Polvo Marca D
+(1, '1234567890136', 2900.00, 'S'); -- Gaseosa Fanta 2L
+
 --sucursale 2
 INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) VALUES
 (2, '1234567890126', 2500.00, 'S'), -- Detergente Líquido Marca C
@@ -361,11 +358,7 @@ INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) 
 (2, '1234567890133', 3100.00, 'S'), -- Coca Cola Zero 2L
 (2, '1234567890134', 1900.00, 'S'), -- Jugo en Botella Marca E
 (2, '1234567890135', 1850.00, 'S'), -- Yogur Natural 1L
-(2, '1234567890136', 2900.00, 'S'), -- Gaseosa Fanta 2L
-(2, '1234567890137', 2300.00, 'S'), -- Detergente Líquido Marca C
-(2, '1234567890138', 1100.00, 'S'), -- Leche Descremada 1L Marca B
-(2, '1234567890139', 1300.00, 'S'), -- Yogur Sabor Durazno 1L
-(2, '1234567890140', 1000.00, 'S'); -- Jugo en Polvo Marca D
+(2, '1234567890136', 2900.00, 'S'); -- Gaseosa Fanta 2L
 --sucursal 3
 INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) VALUES
 (3, '1234567890126', 2500.00, 'S'), -- Detergente Líquido Marca C
@@ -378,11 +371,8 @@ INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) 
 (3, '1234567890133', 3100.00, 'S'), -- Coca Cola Zero 2L
 (3, '1234567890134', 1900.00, 'S'), -- Jugo en Botella Marca E
 (3, '1234567890135', 1850.00, 'S'), -- Yogur Natural 1L
-(3, '1234567890136', 2900.00, 'S'), -- Gaseosa Fanta 2L
-(3, '1234567890137', 2300.00, 'S'), -- Detergente Líquido Marca C
-(3, '1234567890138', 1100.00, 'S'), -- Leche Descremada 1L Marca B
-(3, '1234567890139', 1300.00, 'S'), -- Yogur Sabor Durazno 1L
-(3, '1234567890140', 1000.00, 'S'); -- Jugo en Polvo Marca D
+(3, '1234567890136', 2900.00, 'S'); -- Gaseosa Fanta 2L
+
 --sucursal 4
 INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) VALUES
 (4, '1234567890126', 2500.00, 'S'), -- Detergente Líquido Marca C
@@ -395,11 +385,8 @@ INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) 
 (4, '1234567890133', 3100.00, 'S'), -- Coca Cola Zero 2L
 (4, '1234567890134', 1900.00, 'S'), -- Jugo en Botella Marca E
 (4, '1234567890135', 1850.00, 'S'), -- Yogur Natural 1L
-(4, '1234567890136', 2900.00, 'S'), -- Gaseosa Fanta 2L
-(4, '1234567890137', 2300.00, 'S'), -- Detergente Líquido Marca C
-(4, '1234567890138', 1100.00, 'S'), -- Leche Descremada 1L Marca B
-(4, '1234567890139', 1300.00, 'S'), -- Yogur Sabor Durazno 1L
-(4, '1234567890140', 1000.00, 'S'); -- Jugo en Polvo Marca D
+(4, '1234567890136', 2900.00, 'S'); -- Gaseosa Fanta 2L
+
 
 -- Seleccionar todos los registros de la tabla paises
 SELECT * FROM dbo.paises;
