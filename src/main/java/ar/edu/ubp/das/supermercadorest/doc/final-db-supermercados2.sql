@@ -323,7 +323,8 @@ INSERT INTO dbo.productos (cod_barra, nom_producto, desc_producto, imagen, nro_c
 ('1234567890139', 'Yogur Sabor Durazno 1L', 'Yogur sabor durazno', 'yogur_durazno.jpg', 1, 1, 2, 'S'),
 ('1234567890140', 'Jugo en Polvo Marca D', 'Jugo en polvo sabor limón', 'jugo_limon.jpg', 5, 4, 6, 'S');
 
-
+INSERT INTO dbo.productos (cod_barra, nom_producto, desc_producto, imagen, nro_categoria, nro_marca, nro_tipo_producto, vigente) VALUES
+('1234567890141', 'Carne molida 1kg', 'Carne molida de vaca', 'jugo_limon.jpg', 5, 4, 6,  'S');
 -- Crear tabla de productos_sucursales
 CREATE TABLE dbo.productos_sucursales (
     nro_sucursal INT FOREIGN KEY REFERENCES sucursales(nro_sucursal),
@@ -345,7 +346,8 @@ INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) 
 (1, '1234567890134', 1900.00, 'S'), -- Jugo en Botella Marca E
 (1, '1234567890135', 1850.00, 'S'), -- Yogur Natural 1L
 (1, '1234567890136', 2900.00, 'S'); -- Gaseosa Fanta 2L
-
+INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) VALUES
+(1, '1234567890141', 9100.00, 'S'); -- carne
 --sucursale 2
 INSERT INTO dbo.productos_sucursales (nro_sucursal, cod_barra, precio, vigente) VALUES
 (2, '1234567890126', 2500.00, 'S'), -- Detergente Líquido Marca C
@@ -456,14 +458,16 @@ BEGIN
     SELECT p.cod_barra, 
            p.nom_producto, 
            ps.precio, 
-           c.nom_categoria
+           c.nom_categoria,
+		   ps.nro_sucursal
     FROM dbo.productos_sucursales ps
     JOIN dbo.productos p ON ps.cod_barra = p.cod_barra
     JOIN dbo.categorias_productos c ON p.nro_categoria = c.nro_categoria
     GROUP BY p.cod_barra, 
              p.nom_producto, 
              ps.precio, 
-             c.nom_categoria;
+             c.nom_categoria,
+			 ps.nro_sucursal;
 END;
 
 
@@ -485,6 +489,7 @@ BEGIN
         s.coord_longitud,
         s.habilitada,
         l.nom_localidad,
+		l.nro_localidad,
         p.nom_provincia,
         
         -- JSON para los horarios, cada día como un registro individual
